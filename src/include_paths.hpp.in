@@ -1,0 +1,4 @@
+namespace weakbindgen {
+    constexpr inline char clang_internal_include_path[] = "-isystem@WEAKBINDGEN_CLANG_INTERNAL_INCLUDE_PATH@";
+    constexpr inline char clang_include_path[] = "-I@WEAKBINDGEN_CLANG_INCLUDE_PATH@";
+}

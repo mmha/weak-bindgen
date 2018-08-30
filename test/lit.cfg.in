@@ -1,0 +1,16 @@
+import os
+import sys
+import re
+import platform
+import subprocess
+
+import lit.util
+import lit.formats
+
+config.name = 'weak-bindgen'
+config.suffixes = ['.hpp']
+config.excludes = ["header.hpp"]
+config.test_source_root = "@PROJECT_SOURCE_DIR@/test"
+config.test_exec_root = "@PROJECT_BINARY_DIR@/test"
+config.test_format = lit.formats.ShTest(execute_external=False)
+config.substitutions.append(('%weak-bindgen', "@PROJECT_BINARY_DIR@/bin/weak-bindgen"))

@@ -1,0 +1,11 @@
+include(CheckCXXCompilerFlag)
+
+function(add_compile_options_if_supported)
+    foreach(flag ${ARGV})
+        string(REGEX REPLACE "[^a-zA-Z0-9]+" "-" result_var ${flag})
+        check_cxx_compiler_flag(${flag} supports${result_var})
+        if(supports${result_var})
+            add_compile_options(${flag})
+        endif()
+    endforeach()
+endfunction()
